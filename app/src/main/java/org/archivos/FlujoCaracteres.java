@@ -24,7 +24,8 @@ public class FlujoCaracteres
         {
             for(int i = 0; i < data.length; i++)
             {
-                file.append(data[i]);
+                for(int j = 0; j < data[i].length(); j++)
+                    file.write(data[i].charAt(j));
             }
         }catch(IOException e)
         {
@@ -40,12 +41,14 @@ public class FlujoCaracteres
         {
             for (String string : value) 
             {
-                file.append(string);
+                for(int i = 0; i < string.length(); i++)
+                    file.write(string.charAt(i));
             }
 
             for(int i = 0; i < data.length; i++)
             {
-                file.append(data[i]);
+                for(int j = 0; j < data[i].length(); j++)
+                    file.write(data[i].charAt(j));
             }
         }catch(IOException e)
         {
