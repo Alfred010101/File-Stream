@@ -12,13 +12,14 @@ public class App
     public static void main(String[] args) 
     {
         FlujoCaracteres.path();
-        String[] data = {
-            "parrafo 1\n",
-            "parrafo 2\nparrafo 3\n",
-            "parrafo 4:)\n"
+        String[] data = 
+        {
+            "parrafo 9\n",
+            "parrafo 10\nparrafo 11\n",
+            "parrafo 12:)\n"
         };
-        FlujoCaracteres.writeEnd("flujo-caracteres", data);
-        List<String> value = FlujoCaracteres.read("flujo-caracteres");
+        FlujoCaracteres.writeEndByLine("flujo-caracteres", data);
+        List<String> value = FlujoCaracteres.readByLine("flujo-caracteres");
         
         value.forEach(System.out::print);
     }

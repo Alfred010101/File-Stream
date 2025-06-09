@@ -1,5 +1,7 @@
 package org.archivos;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -33,6 +35,20 @@ public class FlujoCaracteres
         }
     }
 
+    public static void writeByLine(String nameFile, String[] data) 
+    {
+        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path + nameFile)))
+        {
+            for(String line : data)
+            {
+                bufferedWriter.write(line);
+            }
+        }catch(IOException e)
+        {
+            System.out.println(e.toString());
+        }
+    }
+
     public static void writeEnd(String nameFile, String[] data) 
     {
         List<String> value = FlujoCaracteres.read(nameFile);
@@ -49,6 +65,20 @@ public class FlujoCaracteres
             {
                 for(int j = 0; j < data[i].length(); j++)
                     file.write(data[i].charAt(j));
+            }
+        }catch(IOException e)
+        {
+            System.out.println(e.toString());
+        }
+    }
+
+    public static void writeEndByLine(String nameFile, String[] data) 
+    {
+        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path + nameFile, true)))
+        {
+            for(String line : data)
+            {
+                bufferedWriter.write(line);
             }
         }catch(IOException e)
         {
@@ -76,6 +106,26 @@ public class FlujoCaracteres
                     stringBuilder = new StringBuilder();
                 }
                 code = file.read();
+            }
+        }catch(IOException e)
+        {
+            System.out.println(e.toString());
+        }
+
+        return data;
+    }
+
+    public static List<String> readByLine(String nameFile) 
+    {
+        List<String> data = new ArrayList<>();
+
+        try(BufferedReader bufferedReader = new BufferedReader(new FileReader(path + nameFile)))
+        {
+            String line = bufferedReader.readLine();
+            while(line != null)
+            {
+                data.add(line + '\n');
+                line = bufferedReader.readLine();
             }
         }catch(IOException e)
         {
