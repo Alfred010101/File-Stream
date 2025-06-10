@@ -4,12 +4,14 @@
 package org.run;
 
 import org.test.TestFlujoBytes;
+import org.test.TestSerializacion;
 
 public class App 
 {
     public static void main(String[] args) 
     {
         // TestFlujoCaracteres.exec();
-        TestFlujoBytes.exec();
+        // TestFlujoBytes.exec();
+        TestSerializacion.exec();
     }
 }
