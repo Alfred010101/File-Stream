@@ -1,6 +1,6 @@
 package org.oop.animals;
 
-public interface Carnivoro 
+public interface Cazador 
 {
     void cazar();
 }

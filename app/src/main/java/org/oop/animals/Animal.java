@@ -1,6 +1,8 @@
 package org.oop.animals;
 
-public abstract class Animal implements Desplazar
+import java.io.Serializable;
+
+public abstract class Animal implements Serializable, Desplazar
 {
     protected String nombre;
     protected int edad;

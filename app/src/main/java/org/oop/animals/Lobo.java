@@ -1,6 +1,6 @@
 package org.oop.animals;
 
-public final class Lobo extends Mamifero implements Carnivoro
+public final class Lobo extends Mamifero implements Cazador
 {
     private String raza;
 

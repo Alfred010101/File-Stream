@@ -1,6 +1,6 @@
 package org.oop.animals;
 
-public class Aguila extends Ave implements Carnivoro 
+public class Aguila extends Ave implements Cazador 
 {
 
     public Aguila(String nombre, int edad, double envergaduraAlas) 
